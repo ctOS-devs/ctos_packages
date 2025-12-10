@@ -11,6 +11,9 @@ alias rt="$PWD/rtracker"
 # Loop through each item in the current directory
 for dir in */; do
     # Check if it's actually a directory (in case no directories exist)
+    if [ $dir == "EXAMPLE/" ]; then
+        continue
+    fi
     if [ -d "$dir" ]; then
 #        echo "Entering directory: $dir"
         cd "$dir" || continue
