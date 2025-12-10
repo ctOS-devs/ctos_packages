@@ -1,18 +1,16 @@
-# Contributor: Your Name <your@email.com>
-# Maintainer: Your Name <your@email.com>
 pkgname=make
 pkgver=4.4
 pkgrel=0
 pkgdesc="GNU Make utility"
 url="https://www.gnu.org/software/make/"
-arch="all"
+arch="x86_64"
 license="GPL-3.0-or-later"
 depends=""
 makedepends=""
 install=""
 subpackages=""
 source=""
-builddir="$srcdir/$pkgname-$pkgver"
+builddir=$PWD/$pkgname-*
 
 build() {
     return 0
@@ -20,9 +18,8 @@ build() {
 
 package() {
     mkdir -p "$pkgdir"
-#    cp -r "$srcdir"/$pkgname-$pkgver/* "$pkgdir"/usr/
     ls "$pkgdir/"
-#    cp -r "$srcdir/$pkgname-$pkgver/*" "$pkgdir/"
-    cp -r $PWD/make-$pkgver/* "$pkgdir/"
+#    cp -r $PWD/make-$pkgver/* "$pkgdir/"
+    cp -r $builddir/* $pkgdir
     ls "$pkgdir/"
 }
