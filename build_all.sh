@@ -1,5 +1,7 @@
 #!/bin/bash
 
+./rtracker_download.sh
+
 # Store the original directory
 ORIGINAL_DIR="$PWD"
 
