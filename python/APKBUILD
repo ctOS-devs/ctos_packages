@@ -1,0 +1,24 @@
+pkgname=python
+pkgver=1.0
+pkgrel=0
+pkgdesc="Python language"
+url="example.com"
+arch="x86_64"
+license="NO LICENSE"
+depends=""
+makedepends=""
+install=""
+subpackages=""
+source=""
+builddir=$PWD/$pkgname*
+
+build() {
+    return 0
+}
+
+package() {
+    mkdir -p "$pkgdir"
+    ls "$pkgdir/"
+    cp -r $builddir/* $pkgdir
+    ls "$pkgdir/"
+}
