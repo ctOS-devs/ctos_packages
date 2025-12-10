@@ -10,7 +10,7 @@ makedepends=""
 install=""
 subpackages=""
 source=""
-builddir=$PWD/$pkgname-*
+builddir=$PWD/$pkgname*
 
 build() {
     return 0
@@ -19,7 +19,6 @@ build() {
 package() {
     mkdir -p "$pkgdir"
     ls "$pkgdir/"
-#    cp -r $PWD/make-$pkgver/* "$pkgdir/"
     cp -r $builddir/* $pkgdir
     ls "$pkgdir/"
 }
